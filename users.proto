@@ -8,7 +8,7 @@ import "common.proto";
 
 service UserService {
     rpc CreateUser(UserCreate) returns (User) {}
-    rpc GetUser(ById) returns (User) {}
+    rpc GetUser(ByUsername) returns (User) {}
     rpc UpdateUser(UserCreate) returns (Void) {}
     rpc DeleteUser(ById) returns (Void) {}
     rpc GetAllUsers(Void) returns (Users) {}
@@ -26,6 +26,9 @@ message User {
     string Username = 1;
     string Password = 2;
     string Email = 3;
+}
+message ByUsername {
+    string Username = 1;
 }
 
 message Users {
