@@ -9,6 +9,7 @@ import "common.proto";
 service UserService {
     rpc CreateUser(UserCreate) returns (User) {}
     rpc GetUser(ByUsername) returns (User) {}
+    rpc LoginUser(LoginReq) returns (Token) {}
     rpc UpdateUser(UserCreate) returns (Void) {}
     rpc DeleteUser(ById) returns (Void) {}
     rpc GetAllUsers(Void) returns (Users) {}
@@ -33,4 +34,11 @@ message ByUsername {
 
 message Users {
     repeated User Users = 1;
+}
+message LoginReq {
+    string Username = 1;
+    string Password = 2;
+}
+message Token {
+    string Token = 1;
 }
