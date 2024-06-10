@@ -7,7 +7,7 @@ package restaurant_protos;
 import "common.proto";
 
 service UserService {
-    rpc CreateUser(UserCreate) returns (ById) {}
+    rpc CreateUser(UserCreate) returns (User) {}
     rpc GetUser(ById) returns (User) {}
     rpc UpdateUser(UserCreate) returns (Void) {}
     rpc DeleteUser(ById) returns (Void) {}
