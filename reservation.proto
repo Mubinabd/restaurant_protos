@@ -12,7 +12,7 @@ service ReservationService {
     rpc UpdateReservation(ReservationCreate) returns (Void) {}
     rpc DeleteReservation(ById) returns (Void) {}
     rpc GetAllReservation(FilterByTime) returns (Reservations) {}
-    rpc GetTotalSum(Void) returns (Total) {}
+    rpc GetTotalSum(ById) returns (Total) {}
 }
 
 message ReservationCreate {
