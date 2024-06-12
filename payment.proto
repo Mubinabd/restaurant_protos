@@ -19,9 +19,9 @@ message PaymentCreate {
     string Id = 1;
     string ReservationId = 2;
     string PaymentMethod = 3;
-    string PaymentStatus = 4;
-
+    float Amount = 4;
 }
+   
 message Payment {
     string Id = 1;
     string ReservationId = 2;
