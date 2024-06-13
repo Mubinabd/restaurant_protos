@@ -13,6 +13,7 @@ service ReservationService {
     rpc DeleteReservation(ById) returns (Void) {}
     rpc GetAllReservation(FilterByTime) returns (Reservations) {}
     rpc GetTotalSum(ById) returns (Total) {}
+    rpc CheckReservation(ResrvationTime) returns (Void) {}
 }
 
 message ReservationCreate {
@@ -41,4 +42,16 @@ message FilterByTime {
 }
 message Total {
     float Total = 1;
+}
+message ResrvationTime {
+    string ReservationTime = 1;
+    string RestaurantId = 2;
+}
+message ReservationOrder {
+    string MenuItemId = 1;
+    int32 Quantity = 2;
+}
+message ReservationPayment {
+    string PaymentMethod = 1;
+    float Amount = 2;
 }
